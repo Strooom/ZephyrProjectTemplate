@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"[c]": {
+			"editor.defaultFormatter": "ms-vscode.cpptools"
+		}
+	}
+}
