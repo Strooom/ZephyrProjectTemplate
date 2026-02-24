@@ -35,14 +35,38 @@ This repository does NOT take care of the installation of the necessary 'Host To
 * either install them following the official [Zephyr Getting Started Guide](https://docs.zephyrproject.org/latest/getting_started/index.html).
 * or use the 'Workbench for Zephyr' VSCode extension and install the Host Tools from there.
 
+install Python for a 'Virtual Environment'
+```shell
+python -m venv .venv
+```
+This creates a local .venv folder
+
+Activate the virtual environment
+```shell
+.venv\Scripts\Activate.ps1
+```
+
+Upgrade pip
+```shell
+python.exe -m pip install --upgrade pip
+```
+
+```shell
+pip install west
+```
+
+
+
 ## Step 1 : Clone the repository into a 'West Workspace'
 You don't need to do a git clone yourself, west will do this for you. Open a terminal, move into the 'top-directory' of your new project and run 
 
 ```shell
-west init -m https://github.com/zephyrproject-rtos/example-application
+# initialize from the default 'main' branch
+west init -m https://github.com/Strooom/ZephyrProjectTemplate
+# ..or..
+# initialize from a specific branch, in this example 'develop'
+west init -m https://github.com/Strooom/ZephyrProjectTemplate -mr develop
 ```
-
-Note : your template repository is 
 
 ## Step 2 : West Update
 A number of files which can easily be regenerated or downloaded, are NOT included in the repository, in order to keep it small. Once on your local disk, you let West download all that is needed by running 
