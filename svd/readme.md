@@ -1,0 +1,2 @@
+This folder can hold the .svd files for the MCU / SOC used in your project.  
+The .vscode/launch.json file will refer to a .svd file, so the debugger 'knows' about the registers of your MCU. This way it's easy to check their values from the debugger.

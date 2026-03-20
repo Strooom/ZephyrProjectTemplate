@@ -4,7 +4,7 @@
 int main(void)
 {
 	while (1) {
-		printf("Hello World !\n");
+		printf("Hello JLink !\n");
 		k_msleep(1000);
 	}
 	return 0;
