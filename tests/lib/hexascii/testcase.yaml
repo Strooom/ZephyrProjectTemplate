@@ -1,0 +1,10 @@
+tests:
+  lib.hexascii:
+    harness: ztest
+    platform_allow:
+      - native_sim
+    timeout: 10
+    tags:
+      - unit
+      - hexascii
+  

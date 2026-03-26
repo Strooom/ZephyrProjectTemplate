@@ -32,17 +32,6 @@ jobs:
         working-directory: app
         run: west build -b stm32h747i_disco/stm32h747xx/m7
 
-      # - name: Build firmware (twister)
-      #   working-directory: app
-      #   shell: bash
-      #   run: |
-      #     west twister -T app -v --inline-logs --integration
-
-      # - name: Twister Tests
-      #   working-directory: example-application
-      #   shell: bash
-      #   run: |
-      #     if [ "${{ runner.os }}" = "Windows" ]; then
-      #       EXTRA_TWISTER_FLAGS="--short-build-path -O/tmp/twister-out"
-      #     fi
-      #     west twister -T tests -v --inline-logs --integration $EXTRA_TWISTER_FLAGS
+      - name: Run unit tests
+        working-directory: app
+        run: ../zephyr/scripts/twister -T tests -p native_sim

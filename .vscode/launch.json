@@ -14,5 +14,39 @@
       "runToEntryPoint": "main",
       "showDevDebugOutput": "none"
     }
+    ,
+    {
+      "name": "Debug (Black Magic Probe)",
+      "type": "cortex-debug",
+      "request": "launch",
+      "servertype": "bmp",
+      "device": "STM32WLE5JC",
+      "interface": "swd",
+      "BMPGDBSerialPort": "/dev/ttyACM0",
+      "executable": "${workspaceFolder}/build/zephyr/zephyr.elf",
+      "gdbPath": "/home/strooom/projects/zephyr/sdks/zephyr-sdk-0.17.4/arm-zephyr-eabi/bin/arm-zephyr-eabi-gdb",
+      "svdFile": "${workspaceFolder}/svd/stm32wle5.svd",
+      "runToEntryPoint": "main",
+      "showDevDebugOutput": "none"
+    }
+    ,
+    {
+      "name": "Debug (ST-Link)",
+      "type": "cortex-debug",
+      "request": "launch",
+      "servertype": "openocd",
+      "device": "STM32WLE5JC",
+      "interface": "swd",
+      "configFiles": [
+        "interface/stlink.cfg",
+        "target/stm32wlx.cfg"
+      ],
+      "serverpath": "/home/strooom/projects/zephyr/sdks/zephyr-sdk-0.17.4/sysroots/x86_64-pokysdk-linux/usr/bin/openocd",
+      "executable": "${workspaceFolder}/build/zephyr/zephyr.elf",
+      "gdbPath": "/home/strooom/projects/zephyr/sdks/zephyr-sdk-0.17.4/arm-zephyr-eabi/bin/arm-zephyr-eabi-gdb",
+      "svdFile": "${workspaceFolder}/svd/stm32wle5.svd",
+      "runToEntryPoint": "main",
+      "showDevDebugOutput": "none"
+    }
   ]
 }
