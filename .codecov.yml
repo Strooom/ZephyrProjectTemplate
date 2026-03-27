@@ -1,0 +1,25 @@
+codecov:
+  require_ci_to_pass: false
+
+coverage:
+  precision: 2
+  round: down
+  range: "70...100"
+  status:
+    project: false
+    patch: false
+    changes: false
+
+# Ignore patterns - exclude everything outside app/lib and app/src
+ignore:
+  - "zephyr"
+  - "modules"
+  - "twister-out"
+  - "boards"
+  - "docs"
+  - "svd"
+  - "tests"
+
+comment:
+  layout: "reach,diff,flags,tree"
+  behavior: default

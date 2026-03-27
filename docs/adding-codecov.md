@@ -149,7 +149,28 @@ jobs:
 
 ---
 
-## Step 7 — Add a Codecov badge to your README (optional)
+## Step 7 — Filter coverage to your own source files (optional)
+
+By default, gcovr includes all compiled files — Zephyr kernel code, drivers, and third-party libraries. To limit coverage to only your own source directories, create a `gcovr.cfg` file in your app root (next to `west.yml`):
+
+```
+filter = ^src/
+filter = ^lib/
+```
+
+Each `filter` is a regex matched against the **relative** path from `--coverage-basedir`. The `^` anchor ensures only paths that start with `src/` or `lib/` are included, preventing accidental matches against Zephyr's own `../zephyr/lib/` paths.
+
+Add or adjust entries to match your project layout:
+- `filter = ^src/` — covers everything under `app/src/`
+- `filter = ^lib/` — covers everything under `app/lib/` and all its subdirectories
+
+**Important notes on `gcovr.cfg` syntax:**
+- Do **not** add an INI section header like `[gcovr]` — gcovr 8.x expects plain `key = value` pairs.
+- gcovr automatically discovers the file when it is placed in the working directory or any parent directory.
+
+---
+
+## Step 8 — Add a Codecov badge to your README (optional)
 
 After your first successful upload, Codecov generates a badge URL. Find it under **Settings → Badge** in the Codecov dashboard for your repo, then add it to your `README.md`:
 

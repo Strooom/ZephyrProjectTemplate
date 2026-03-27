@@ -1,0 +1,8 @@
+# Ignore zephyr framework and modules
+zephyr/
+modules/
+twister-out/
+tests/
+boards/
+docs/
+svd/
