@@ -45,6 +45,13 @@ jobs:
           echo "First 25 lines of coverage.json:"
           head -25 app/twister-out/coverage.json
 
+      - name: Copy codecov config to repo root for test
+        run: |
+          echo "Copying codecov config from app/.github/.codecov.yml to .codecov.yml"
+          cp app/.github/.codecov.yml .codecov.yml
+          echo "Root codecov file contents:"
+          head -20 .codecov.yml
+
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v6
         with:
