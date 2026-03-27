@@ -38,13 +38,13 @@ jobs:
         working-directory: app
         run: ../zephyr/scripts/twister -T tests -p native_sim --coverage --coverage-basedir .
 
-      - name: Convert coverage to XML
-        working-directory: app
-        run: gcovr --add-tracefile twister-out/coverage.json --xml -o twister-out/coverage.xml
+      # - name: Convert coverage to XML
+      #   working-directory: app
+      #   run: gcovr --add-tracefile twister-out/coverage.json --xml -o twister-out/coverage.xml
 
       - name: Upload coverage reports to Codecov
-        uses: codecov/codecov-action@v5
+        uses: codecov/codecov-action@v6
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-          files: app/twister-out/coverage.xml
+          files: app/twister-out/coverage.json
           disable_search: true
