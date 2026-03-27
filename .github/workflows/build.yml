@@ -48,3 +48,4 @@ jobs:
           token: ${{ secrets.CODECOV_TOKEN }}
           files: app/twister-out/coverage.json
           disable_search: true
+          gcov_ignore: app/twister-out
