@@ -47,8 +47,9 @@ jobs:
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           files: app/twister-out/coverage.json
+          codecov_yml_path: app/.codecov.yml
           disable_search: true
-          gcov: false
+          gcov_ignore: "**/*.gcno"
           flags: app-lib-tests
           verbose: false
           env_vars: GITHUB_REF,GITHUB_COMMIT
