@@ -44,5 +44,5 @@ jobs:
           token: ${{ secrets.CODECOV_TOKEN }}
           disable_search: true
           gcov_ignore: 'modules/**,zephyr/**,app/**'
-          files: app/twister-out/coverage/coverage.json
+          files: app/twister-out/coverage.json
           verbose: true
