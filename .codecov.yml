@@ -10,16 +10,18 @@ coverage:
     patch: false
     changes: false
 
-# Ignore patterns - exclude everything outside app/lib and app/src
+# Only include coverage from lib/ and src/ directories
 ignore:
-  - "zephyr"
-  - "modules"
-  - "twister-out"
-  - "boards"
-  - "docs"
-  - "svd"
-  - "tests"
+  - "zephyr/**"
+  - "modules/**"
+  - "twister-out/**"
+  - "boards/**"
+  - "docs/**"
+  - "svd/**"
+  - "tests/**"
 
 comment:
   layout: "reach,diff,flags,tree"
   behavior: default
+
+
