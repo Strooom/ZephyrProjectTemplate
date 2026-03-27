@@ -34,4 +34,9 @@ jobs:
 
       - name: Run unit tests
         working-directory: app
-        run: ../zephyr/scripts/twister -T tests -p native_sim
+        run: ../zephyr/scripts/twister -T tests -p native_sim --coverage --coverage-basedir .
+
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v5
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
