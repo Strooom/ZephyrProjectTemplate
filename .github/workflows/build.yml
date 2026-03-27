@@ -42,7 +42,7 @@ jobs:
         uses: codecov/codecov-action@v6
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-          gcov: true
-          gcov_include: 'app/lib/**'
-          gcov_ignore: 'modules/**,zephyr/**,app/boards/**,app/docs/**,app/svd/**,app/tests/**,app/twister-out/**'
+          disable_search: true
+          gcov_ignore: 'modules/**,zephyr/**,app/**'
+          files: app/twister-out/coverage/coverage.json
           verbose: true
