@@ -9,8 +9,9 @@ manifest:
   projects:
     - name: zephyr
       remote: zephyrproject-rtos
-      revision: main
+      revision: 69f3a442708eb2b4429298b72cbb2a5ba99125ff
       import:
         name-allowlist:
           - cmsis_6
           - hal_stm32
+          - segger

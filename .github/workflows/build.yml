@@ -38,11 +38,12 @@ jobs:
         working-directory: app
         run: ../zephyr/scripts/twister -T tests -p native_sim --coverage --coverage-basedir .
 
-      - name: Upload coverage reports to Codecov
-        uses: codecov/codecov-action@v6
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}
-          disable_search: true
-          gcov_ignore: 'modules/**,zephyr/**,app/**'
-          files: app/twister-out/coverage.json
-          verbose: true
+      # - name: Upload coverage reports to Codecov
+      #   uses: codecov/codecov-action@v6
+      #   with:
+      #     token: ${{ secrets.CODECOV_TOKEN }}
+      #     disable_search: true
+      #     gcov_ignore: 'modules/**,zephyr/**,app/**'
+      #     files: app/twister-out/coverage.json
+      #     verbose: true
+

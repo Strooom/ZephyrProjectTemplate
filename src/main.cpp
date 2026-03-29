@@ -1,7 +1,7 @@
 #include <zephyr/kernel.h>
 #include <zephyr/drivers/gpio.h>
 #include <hexascii.hpp>
-#include <qrcode.hpp>
+
 
 static char hexString[33];  // 8 hex characters + null terminator
 
